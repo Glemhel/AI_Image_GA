@@ -1,23 +1,28 @@
 import numpy as np
 from projectConstants import *
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import matplotlib.pyplot as plt
 import cv2
 
 
 def generateRandomImageData(k):
-    return np.random.random(size=k * 10)
+    data = []
+    for _ in range(k):
+        idx = np.random.randint(0, EMOJIS_NUMBER)
+        x, y, r, g, b = np.random.random(5)
+        data.append([idx, x, y, r, g, b])
+    return np.array(data)
 
 
 def dataToImage(data):
     image = Image.new('RGB', (HEIGHT, WIDTH))
     draw = ImageDraw.Draw(image, 'RGBA')
-    for i in range(len(data) // 10):
-        p1 = (int(HEIGHT * data[i]), int(WIDTH * data[i + 1]))
-        p2 = (int(HEIGHT * data[i + 2]), int(WIDTH * data[i + 3]))
-        p3 = (int(HEIGHT * data[i + 4]), int(WIDTH * data[i + 5]))
-        c = (int(255 * data[i + 6]), int(255 * data[i + 7]), int(255 * data[i + 8]), int(255 * data[i + 9]))
-        draw.polygon([p1, p2, p3], c)
+    for i in range(len(data) // ENTRY_SIZE):
+        unicode_emoji = emojis_for_drawing[data[i]]
+        x, y = int(HEIGHT * data[i + 1]), int(WIDTH * data[i + 2])
+        c = (int(255 * data[i + 3]), int(255 * data[i + 4]), int(255 * data[i + 5]))
+        # draw image
+        draw.text((x, y), unicode_emoji, font=unicode_font, fill=c)
     return image
 
 
