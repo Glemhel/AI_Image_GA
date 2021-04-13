@@ -22,26 +22,29 @@ class Chromosome:
 
 
 def mutate(p: Chromosome):
-    mutation_position = np.random.randint(0, p.data.shape[0])
-    # p.data[mutation_position] = max(0, min(
-    #     np.random.normal(loc=p.data[mutation_position],scale=MUTATION_VARIANCE), 1
-    # ))
-    p.data[mutation_position] = np.random.random()
+    # mutate each position with certain probability, in average 1 is changed
+    probability_mutation = 1 / float(p.data.shape[0])
+    for i in range(p.data.shape[0]):
+        if np.random.random() < probability_mutation:
+            p.data[i] = np.random.normal(loc=p.data[i], scale=MUTATION_VARIANCE)
 
 
 def crossover(p1: Chromosome, p2: Chromosome):
     # simulated binary crossover
     u = np.random.random()
     if u <= 0.5:
-        beta = np.power((2 * np.random.random()), 1.0 / (SBX_ETA + 1.0))
+        beta = np.power((2 * u), 1.0 / (SBX_ETA + 1.0))
     else:
         beta = np.power(1 / (2 * (1 - u)), 1.0 / (SBX_ETA + 1.0))
     for i in range(p1.data.shape[0]):
+        offspring1 = ((1 + beta) * p1.data[i] + (1 - beta) * p2.data[i]) / 2.0
+        offspring2 = ((1 - beta) * p1.data[i] + (1 + beta) * p2.data[i]) / 2.0
         if np.random.random() <= 0.5:
-            offspring1 = ((1 + beta) * p1.data[i] + (1 - beta) * p2.data[i]) / 2.0
-            offspring2 = ((1 - beta) * p1.data[i] + (1 + beta) * p2.data[i]) / 2.0
-            p1.data[i] = np.median([0, 1, offspring1])
-            p2.data[i] = np.median([0, 1, offspring2])
+            p1.data[i] = min(1, max(0, offspring1))
+            p2.data[i] = min(1, max(0, offspring2))
+        else:
+            p1.data[i] = min(1, max(0, offspring2))
+            p2.data[i] = min(1, max(0, offspring1))
 
 
 def select(population, offspring_size, method='tournament'):
