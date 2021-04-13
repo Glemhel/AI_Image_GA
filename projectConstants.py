@@ -3,12 +3,12 @@ import cv2
 import numpy as np
 from emoji_translate.emoji_translate import Translator
 
-image_name = 'house.jpg'
+image_name = 'flower.JPEG'
 sample_image = Image.open('./reference_images/' + image_name)
 np_sample_image = np.array(sample_image)
 cv2_sample_image = cv2.cvtColor(np_sample_image, cv2.COLOR_RGB2BGR)
-run_name = 'run3'
-path_results = './results/' + image_name[:-4] + run_name
+run_name = '0'
+path_results = './results/' + image_name[:-5] + run_name
 
 HEIGHT, WIDTH = sample_image.size
 POLYGONS_NUMBER = 100
