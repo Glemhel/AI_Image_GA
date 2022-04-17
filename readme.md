@@ -2,7 +2,14 @@
 This work generates images consisting of emoticons that are based on image content. Genetic Algorithm with image difference (MSE) as a loss function is used to generate candidates.
 
 
-<img src="reference_images/dr_stone.jpg" width="350"/> <img src="results/dr_stone_final/iteration10000.png" width="350"/> 
+
+| Original image  | Styled image |
+| ------------- | ------------- |
+| ![](reference_images/dr_stone.jpg) | ![](results/dr_stone_final/iteration10000.png)  |
+| Content Cell  | Content Cell  |
+
+
+
 
 
 # Instructions: how to run yourself?
