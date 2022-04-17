@@ -1,4 +1,10 @@
-# Instructions: how to run program?
+# Styling images with Genetic Algorithms
+This work generates images consisting of emoticons that are based on image content. Genetic Algorithm with image difference (MSE) as a loss function is used to generate candidates.
+
+[Styles image](reference_images/dr_stone.jpg)
+
+
+# Instructions: how to run yourself?
 1. Make sure you unpacked everything from the archive.
 2. Open command line at that folder, and do the following command:
 'python -m pip install -r requirements.txt' for Windows,
