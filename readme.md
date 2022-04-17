@@ -1,7 +1,7 @@
 # Styling images with Genetic Algorithms
 This work generates images consisting of emoticons that are based on image content. Genetic Algorithm with image difference (MSE) as a loss function is used to generate candidates.
 
-[Styles image](reference_images/dr_stone.jpg)
+![Styled image](reference_images/dr_stone.jpg)
 
 
 # Instructions: how to run yourself?
