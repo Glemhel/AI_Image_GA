@@ -9,8 +9,8 @@ This work generates images consisting of emoticons that are based on image conte
      <td>Styled image</td>
   </tr>
   <tr>
-    <td><img src="reference_images/dr_stone.jpg" width=270 height=480></td>
-    <td><img src="results/dr_stone_final/iteration10000.png" width=270 height=480></td>
+    <td><img src="reference_images/dr_stone.jpg" width=270 height=270></td>
+    <td><img src="results/dr_stone_final/iteration10000.png" width=270 height=270></td>
   </tr>
  </table>
 
