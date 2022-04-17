@@ -12,6 +12,14 @@ This work generates images consisting of emoticons that are based on image conte
     <td><img src="reference_images/dr_stone.jpg" width=270 height=270></td>
     <td><img src="results/dr_stone_final/iteration10000.png" width=270 height=270></td>
   </tr>
+  <tr>
+    <td><img src="reference_images/head.jpg" width=270 height=270></td>
+    <td><img src="results/headfinal1/iteration10000.png" width=270 height=270></td>
+  </tr>
+  <tr>
+    <td><img src="reference_images/rabbit.jpg" width=270 height=270></td>
+    <td><img src="results/rabbit_final/iteration10000.png" width=270 height=270></td>
+  </tr>
  </table>
 
 
