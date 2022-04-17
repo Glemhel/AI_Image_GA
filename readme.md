@@ -3,12 +3,16 @@ This work generates images consisting of emoticons that are based on image conte
 
 
 
-| Original image  | Styled image |
-| ------------- | ------------- |
-| ![](reference_images/dr_stone.jpg) | ![](results/dr_stone_final/iteration10000.png)  |
-| Content Cell  | Content Cell  |
-
-
+<table>
+  <tr>
+    <td>Original image</td>
+     <td>Styled image</td>
+  </tr>
+  <tr>
+    <td><img src="reference_images/dr_stone.jpg" width=270 height=480></td>
+    <td><img src="results/dr_stone_final/iteration10000.png" width=270 height=480></td>
+  </tr>
+ </table>
 
 
 
