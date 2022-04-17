@@ -24,7 +24,7 @@ This work generates images consisting of emoticons that are based on image conte
 
 
 
-# Instructions: how to run yourself?
+# Try yourself!
 1. Make sure you unpacked everything from the archive.
 2. Open command line at that folder, and do the following command:
 'python -m pip install -r requirements.txt' for Windows,
